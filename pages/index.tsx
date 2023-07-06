@@ -1,5 +1,13 @@
 import useBeshiefy from '@/hooks'
-import { Box, Button, CopyButton, Footer, Text, TextInput } from '@mantine/core'
+import {
+  Anchor,
+  Box,
+  Button,
+  CopyButton,
+  Footer,
+  Text,
+  TextInput
+} from '@mantine/core'
 
 export default function Home () {
   const { form, onSubmit, beshiefiedMessage } = useBeshiefy()
@@ -70,7 +78,16 @@ export default function Home () {
         }}
         height={5}
       >
-        <Text align='center'>© Dolee</Text>
+        <Text align='center'>
+          ©{' '}
+          <Anchor
+            href='https://www.linkedin.com/in/michaeldollosa/'
+            target='_blank'
+            color='dark'
+          >
+            Dolee
+          </Anchor>
+        </Text>
       </Footer>
     </>
   )
