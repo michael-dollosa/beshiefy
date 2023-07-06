@@ -8,10 +8,11 @@ import {
   Text,
   TextInput
 } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 
 export default function Home () {
   const { form, onSubmit, beshiefiedMessage } = useBeshiefy()
-
+  const viewport = useMediaQuery('(max-width: 600px)')
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -19,7 +20,7 @@ export default function Home () {
           sx={{
             height: '90vh',
             width: '100vw',
-            padding: '5rem',
+            padding: viewport ? '1rem' : '5rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -27,17 +28,27 @@ export default function Home () {
           }}
         >
           <Box sx={{ padding: '3rem' }}>
-            <Text ff='Montserrat' size='3rem' fw='600' align='center'>
+            <Text
+              ff='Montserrat'
+              size={viewport ? '2rem' : '3rem'}
+              fw='800'
+              align='center'
+            >
               🤸 Beshiefy 🤸
             </Text>
           </Box>
 
           <TextInput
-            size='lg'
+            size={viewport ? 'sm' : 'lg'}
             {...form.getInputProps('message')}
             rightSection={
-              <Button type='submit' size='lg' variant='filled' color='pink'>
-                🤸 Beshiefy 🤸
+              <Button
+                type='submit'
+                size={viewport ? 'sm' : 'lg'}
+                variant='filled'
+                color='pink'
+              >
+                {viewport ? '🤸' : '🤸 Beshiefy 🤸'}
               </Button>
             }
           />
@@ -52,15 +63,17 @@ export default function Home () {
                 gap: '1rem'
               }}
             >
-              <Text size='lg' align='center' ff='Inter'>
+              <Text size={viewport ? 'sm' : 'lg'} align='center' ff='Inter'>
                 {beshiefiedMessage}
               </Text>
               <CopyButton value={beshiefiedMessage}>
                 {({ copied, copy }) => (
                   <Button
+                    size={viewport ? 'sm' : 'lg'}
                     variant='outline'
                     color={copied ? 'pink' : 'dark'}
                     onClick={copy}
+                    radius='sm'
                   >
                     {copied ? 'Copied' : 'Copy'}
                   </Button>
