@@ -21,6 +21,15 @@ export default class _Document extends Document {
             name='apple-mobile-web-app-status-bar-style'
             content='black-translucent'
           />
+          <meta property='og:url' content='https://beshieefy.vercel.app/' />
+          <meta property='og:type' content='website' />
+          <meta property='og:title' content='beshieefy' />
+          <meta name='twitter:card' content='summary' />
+          <meta property='og:description' content='beshieefy' />
+          <meta
+            property='og:image'
+            content='https://beshieefy.vercel.app/thumbnail.png'
+          />
           <meta name='title' content='Beshiefy' />
           <script>0</script>
         </Head>
