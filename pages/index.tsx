@@ -48,7 +48,7 @@ export default function Home () {
                 variant='filled'
                 color='pink'
               >
-                {viewport ? '🤸' : '🤸 Beshiefy 🤸'}
+                🤸
               </Button>
             }
           />
