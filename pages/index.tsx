@@ -1,16 +1,5 @@
 import useBeshiefy from '@/hooks'
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  CopyButton,
-  Footer,
-  Text,
-  TextInput
-} from '@mantine/core'
-import { useForm } from '@mantine/form'
-import { useState } from 'react'
+import { Box, Button, CopyButton, Footer, Text, TextInput } from '@mantine/core'
 
 export default function Home () {
   const { form, onSubmit, beshiefiedMessage } = useBeshiefy()
@@ -44,31 +33,33 @@ export default function Home () {
               </Button>
             }
           />
-          <Box
-            sx={{
-              padding: '3rem',
-              display: 'flex',
-              justifyContent: 'center',
-              alignContent: 'center',
-              alignItems: 'center',
-              gap: '1rem'
-            }}
-          >
-            <Text size='lg' align='center' ff='Inter'>
-              {beshiefiedMessage}
-            </Text>
-            <CopyButton value={beshiefiedMessage}>
-              {({ copied, copy }) => (
-                <Button
-                  variant='outline'
-                  color={copied ? 'pink' : 'dark'}
-                  onClick={copy}
-                >
-                  {copied ? 'Copied' : 'Copy'}
-                </Button>
-              )}
-            </CopyButton>
-          </Box>
+          {beshiefiedMessage.length > 1 && (
+            <Box
+              sx={{
+                padding: '3rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignContent: 'center',
+                alignItems: 'center',
+                gap: '1rem'
+              }}
+            >
+              <Text size='lg' align='center' ff='Inter'>
+                {beshiefiedMessage}
+              </Text>
+              <CopyButton value={beshiefiedMessage}>
+                {({ copied, copy }) => (
+                  <Button
+                    variant='outline'
+                    color={copied ? 'pink' : 'dark'}
+                    onClick={copy}
+                  >
+                    {copied ? 'Copied' : 'Copy'}
+                  </Button>
+                )}
+              </CopyButton>
+            </Box>
+          )}
         </Box>
       </form>
       <Footer
