@@ -29,7 +29,7 @@ export default function Home () {
         >
           <Box sx={{ padding: '3rem' }}>
             <Text
-              ff='Montserrat'
+              ff='Inter'
               size={viewport ? '2rem' : '3rem'}
               fw='800'
               align='center'
