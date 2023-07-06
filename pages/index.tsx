@@ -57,6 +57,7 @@ export default function Home () {
               sx={{
                 padding: '3rem',
                 display: 'flex',
+                flexDirection: viewport ? 'column' : 'row',
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
@@ -69,7 +70,7 @@ export default function Home () {
               <CopyButton value={beshiefiedMessage}>
                 {({ copied, copy }) => (
                   <Button
-                    size={viewport ? 'sm' : 'lg'}
+                    size={viewport ? 'sm' : 'md'}
                     variant='outline'
                     color={copied ? 'pink' : 'dark'}
                     onClick={copy}
